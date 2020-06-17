@@ -11,14 +11,27 @@
   $b4 = mysqli_fetch_array($query4);
   $b5 = mysqli_fetch_array($query5);
 
-  ?>
+  ?> <?php
+      error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+      $query1 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B01'");
+      $query2 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B02'");
+      $query3 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B03'");
+      $query4 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B04'");
+      $query5 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B05'");
+      $b1 = mysqli_fetch_array($query1);
+      $b2 = mysqli_fetch_array($query2);
+      $b3 = mysqli_fetch_array($query3);
+      $b4 = mysqli_fetch_array($query4);
+      $b5 = mysqli_fetch_array($query5);
+
+      ?>
 
 
  <div class="container-fluid">
 
    <div class="row">
      <div class="card-header">
-       Tabel Perhitungan Hasil Kriteria
+       <h3><strong>Tabel Perhitungan Hasil Kriteria</strong></h3>
      </div>
      <div class="card-body">
        <form action="hasil_kriteria_akhir.php" method="post">
@@ -253,16 +266,50 @@
              </tr>
            </tbody>
          </table>
+       </form>
+       <div class="form-group">
+         <button class="btn btn-warning" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-refresh"></i> Hitung Ulang</button>
+         <button class="btn btn-success" id="count_button" type="button" onclick="tampil_total()" name="hitung"><i class="fa fa-calculator"></i> Hitung Total</button>
+         <button id="submit_button" class="btn btn-primary" style="display: none;" type="button" onclick="alert()" name="simpan"><i class="fa fa-play"></i> Proses Berikutnya</button>
+       </div>
+       <form method="post" action="" id="form-user" class="form-user">
 
-         <div class="form-group">
-           <button class="btn btn-success" type="button" onclick="tampil_total()" name="simpan">Hitung Total</button>
-         </div>
+         <input type="hidden" name="id_total" placeholder="id total" id="id_total">
+
+
+         <input type="hidden" name="total_1" placeholder="total_1" id="total_1">
+
+
+         <input type="hidden" name="total_2" placeholder="total_2" id="total_2">
+
+
+         <input type="hidden" name="total_3" placeholder="total_3" id="total_3">
+
+         <input type="hidden" name="total_4" placeholder="total_4" id="total_4">
+
+         <input type="hidden" name="total_5" placeholder="total_5" id="total_5">
+
+
        </form>
 
      </div>
    </div>
 
    <script>
+     function reload() {
+       window.location.href = "index.php?page=hasil-kriteria";
+     }
+
+     function alert() {
+       Swal.fire({
+         title: '',
+         text: "Button is working",
+         icon: 'success',
+         showCancelButton: false
+
+       })
+     }
+
      function excel_f4() {
        var f4 = document.getElementById("f4").value;
        var g3 = 1 / f4;
@@ -328,7 +375,7 @@
 
      function tampil_total() {
        Swal.fire({
-         title: 'Pastikan data sudah diisi semua ?',
+         title: 'Apakah data sudah diisi semua ?',
          text: "Jika sudah di isi tekan tombol Yes.",
          icon: 'warning',
          showCancelButton: true,
@@ -340,8 +387,15 @@
 
 
            var x = document.getElementById('result_tr').style;
+           var y = document.getElementById('submit_button').style;
+           var z = document.getElementById('reload_button').style;
+           var a = document.getElementById('count_button').style;
            if (x.display === "none") {
              x.display = 'table-row';
+             z.display = '';
+             y.display = '';
+             a.display = 'none';
+             document.getElementById("id_total").value = "<?= uniqid(); ?>";
              //tampilan sub total f3:f7
              var f3 = document.getElementById("f3").innerHTML;
              var f4 = document.getElementById("f4").value;
@@ -350,6 +404,7 @@
              var f7 = document.getElementById("f7").value;
              var hasil_sumf3f7 = parseFloat(f3) + parseFloat(f4) + parseFloat(f5) + parseFloat(f6) + parseFloat(f7);
              document.getElementById("sumf3f7").innerHTML = hasil_sumf3f7;
+             document.getElementById("total_1").value = hasil_sumf3f7;
              //tampilan sub total g3:g7
              var g3 = document.getElementById("g3").innerHTML;
              var g4 = document.getElementById("g4").innerHTML;
@@ -358,6 +413,7 @@
              var g7 = document.getElementById("g7").value;
              var hasil_sumg3g7 = parseFloat(g3) + parseFloat(g4) + parseFloat(g5) + parseFloat(g6) + parseFloat(g7);
              document.getElementById("sumg3g7").innerHTML = hasil_sumg3g7;
+             document.getElementById("total_2").value = hasil_sumg3g7;
              //tampilan sub total h3:h7
              var h3 = document.getElementById("h3").innerHTML;
              var h4 = document.getElementById("h4").innerHTML;
@@ -366,6 +422,7 @@
              var h7 = document.getElementById("h7").value;
              var hasil_sumh3h7 = parseFloat(h3) + parseFloat(h4) + parseFloat(h5) + parseFloat(h6) + parseFloat(h7);
              document.getElementById("sumh3h7").innerHTML = hasil_sumh3h7;
+             document.getElementById("total_3").value = hasil_sumh3h7;
              //tampilan sub total i3:i7
              var i3 = document.getElementById("i3").innerHTML;
              var i4 = document.getElementById("i4").innerHTML;
@@ -374,6 +431,7 @@
              var i7 = document.getElementById("i7").value;
              var hasil_sumi3i7 = parseFloat(i3) + parseFloat(i4) + parseFloat(i5) + parseFloat(i6) + parseFloat(i7);
              document.getElementById("sumi3i7").innerHTML = hasil_sumi3i7;
+             document.getElementById("total_4").value = hasil_sumi3i7;
              //tampilan sub total j3:j7
              var j3 = document.getElementById("j3").innerHTML;
              var j4 = document.getElementById("j4").innerHTML;
@@ -382,10 +440,36 @@
              var j7 = document.getElementById("j7").innerHTML;
              var hasil_sumj3j7 = parseFloat(j3) + parseFloat(j4) + parseFloat(j5) + parseFloat(j6) + parseFloat(j7);
              document.getElementById("sumj3j7").innerHTML = hasil_sumj3j7;
+             document.getElementById("total_5").value = hasil_sumj3j7;
+
+
+
+             //
+             var id_total = $("#id_total").val();
+             var total_1 = $("#total_1").val();
+             var total_2 = $("#total_2").val();
+             var total_3 = $("#total_3").val();
+             var total_4 = $("#total_4").val();
+             var total_5 = $("#total_5").val();
+             $.ajax({
+               url: 'view/kriteria/simpan-hasil.php',
+               data: 'id_total=' + id_total + '&total_1=' + total_1 + '&total_2=' + total_2 + '&total_3=' + total_3 + '&total_4=' + total_4 + '&total_5=' + total_5,
+
+               success: function() {
+                 Swal.fire({
+                   title: '',
+                   text: "Klik Next proses",
+                   icon: 'success',
+                   showCancelButton: false
+
+                 })
+               }
+             });
 
 
            } else {
              x.display = 'none';
+             z.display = 'none';
            }
 
          }

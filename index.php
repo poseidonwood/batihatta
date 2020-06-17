@@ -33,6 +33,8 @@ require_once "config/database.php";
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 </head>
 
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
