@@ -13,7 +13,7 @@ require_once "config/database.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -34,6 +34,13 @@ require_once "config/database.php";
   <link href="css/style-responsive.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <style>
+    #exampleModalCenter {}
+
+    .modal-body {
+      overflow-x: auto;
+    }
+  </style>
 
 </head>
 
@@ -180,11 +187,6 @@ require_once "config/database.php";
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap-datepicker.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      < script src = "lib/jquery/jquery.min.js" >
-    </script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="lib/jquery.ui.touch-punch.min.js"></script>
     <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
@@ -193,6 +195,8 @@ require_once "config/database.php";
     <!--common script for all pages-->
     <script src="lib/common-scripts.js"></script>
     <!--script for this page-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
