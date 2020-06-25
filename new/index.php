@@ -16,7 +16,9 @@ include "view_component/src_asset.php";
     if (isset($_GET['page'])) {
       if ($_GET['page'] == 'kriteria') {
         include "content/kriteria.php";
-      } else {
+      }elseif ($_GET['page'] == 'analisa-kriteria') {
+        include "content/analisa-kriteria.php";
+      }else {
         //jika halaman di akses salah di pindah ke login page dan hapus season
         // mengaktifkan session php
         // menghapus semua session

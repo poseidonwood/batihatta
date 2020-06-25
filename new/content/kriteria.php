@@ -42,15 +42,15 @@
                <tbody>
                  <?php
                   $no = 1;
-                  $sql_kriteria = mysqli_query($koneksi, "select *from tb_kriteria");
+                  $sql_kriteria = mysqli_query($koneksi, "select *from tbl_kriteria");
                   while ($f_kriteria = mysqli_fetch_array($sql_kriteria)) {
                     // $no1 = $no++;
-                    $id_kriteria = $f_kriteria['kd_kriteria'];
+                    $id_kriteria = $f_kriteria['id_kriteria'];
                     $nm_kriteria = $f_kriteria['nama_kriteria'];
                   ?>
                    <tr>
 
-                     <td class="text-center align-middle"><?= $id_kriteria; ?></td>
+                     <td class="text-center align-middle"><?= $no++; ?></td>
                      <td class="text-center align-middle"><?= $nm_kriteria; ?></td>
                      <td class="text-center align-middle">
                        <div class="btn-group btn-group-sm">
@@ -92,7 +92,7 @@
              <?php
               if (isset($_GET['id_kriteria'])) {
                 $id_kriteria = $_GET['id_kriteria'];
-                $s_edit_kriteria = mysqli_query($koneksi, "select *from tb_kriteria where kd_kriteria = '$id_kriteria'");
+                $s_edit_kriteria = mysqli_query($koneksi, "select *from tbl_kriteria where id_kriteria = '$id_kriteria'");
                 while ($f_edit_kriteria = mysqli_fetch_array($s_edit_kriteria)) {
                   $nm_kriteria = $f_edit_kriteria['nama_kriteria'];
                   $id_kriteria = $f_edit_kriteria['id_kriteria'];
@@ -103,11 +103,11 @@
                  <form action="#" method="post">
                    <div class="form-group">
                      <label for="inputEstimatedBudget">Id Kriteria</label>
-                     <input type="text" id="inputEstimatedBudget" name="id_kriteria" value="<?= $id_kriteria; ?>" class=" form-control" autofocus>
+                     <input type="text" id="inputEstimatedBudget" name="id_kriteria" value="<?= $id_kriteria; ?>" class=" form-control"  readonly>
                    </div>
                    <div class="form-group">
                      <label for="inputSpentBudget">Nama Kriteria</label>
-                     <input type="text" id="inputSpentBudget" name="nm_kriteria" value="<?= $nm_kriteria; ?>" class="form-control">
+                     <input type="text" id="inputSpentBudget" name="nm_kriteria" value="<?= $nm_kriteria; ?>" class="form-control" autofocus>
                    </div>
                    <div class="form-group float-right">
                      <a href="<?= $domain . "?page=kriteria"; ?>" class="btn btn-secondary">Cancel</a>
@@ -118,14 +118,14 @@
                 }
               } else {
                 ?>
-               <form action="#" method="post">
-                 <div class="form-group">
+               <form action="<?=$domain."proses/save-kriteria.php";?>" method="post">
+                <!--  <div class="form-group">
                    <label for="inputEstimatedBudget">Id Kriteria</label>
                    <input type="text" id="inputEstimatedBudget" name="id_kriteria" class="form-control" autofocus>
-                 </div>
+                 </div> -->
                  <div class="form-group">
                    <label for="inputSpentBudget">Nama Kriteria</label>
-                   <input type="text" id="inputSpentBudget" name="nm_kriteria" class="form-control">
+                   <input type="text" id="inputSpentBudget" name="nm_kriteria" class="form-control" autofocus="">
                  </div>
                  <div class="form-group float-right">
                    <a href="#" class="btn btn-secondary">Cancel</a>
