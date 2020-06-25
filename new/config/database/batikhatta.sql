@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2020 at 02:13 PM
+-- Generation Time: Jun 25, 2020 at 02:19 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -44,53 +44,6 @@ INSERT INTO `domain` (`id`, `nm_domain`, `title`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_alternatif`
---
-
-CREATE TABLE `tb_alternatif` (
-  `id_data` varchar(7) NOT NULL,
-  `nama_alternatif` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_alternatif`
---
-
-INSERT INTO `tb_alternatif` (`id_data`, `nama_alternatif`) VALUES
-('7', 'ggggg'),
-('dta-001', 'Asus'),
-('dta-002', 'Acer'),
-('dta-003', 'Dell'),
-('dta-004', 'Toshiba'),
-('dta-005', 'Axioo');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_kriteria`
---
-
-CREATE TABLE `tb_kriteria` (
-  `id_kriteria` varchar(7) NOT NULL,
-  `kd_kriteria` int(7) NOT NULL,
-  `nama_kriteria` varchar(50) NOT NULL,
-  `bobot` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_kriteria`
---
-
-INSERT INTO `tb_kriteria` (`id_kriteria`, `kd_kriteria`, `nama_kriteria`, `bobot`) VALUES
-('krt-001', 1, 'LOKASI', '0.046'),
-('krt-002', 2, 'LABA', '0.146'),
-('krt-003', 3, 'KEAMANAN', '0.192'),
-('krt-004', 4, 'BIAYA SEWA', '0.254'),
-('krt-005', 5, 'TATA LETAK', '0.363');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -118,18 +71,6 @@ INSERT INTO `user` (`id`, `nama`, `email`, `password`, `status`) VALUES
 --
 ALTER TABLE `domain`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tb_alternatif`
---
-ALTER TABLE `tb_alternatif`
-  ADD PRIMARY KEY (`id_data`);
-
---
--- Indexes for table `tb_kriteria`
---
-ALTER TABLE `tb_kriteria`
-  ADD PRIMARY KEY (`id_kriteria`);
 
 --
 -- Indexes for table `user`
