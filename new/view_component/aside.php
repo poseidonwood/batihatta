@@ -205,7 +205,7 @@
         </li> -->
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-database"></i>
+            <i class="nav-icon fas fa-table"></i>
             <p>
               Data List
               <i class="fas fa-angle-left right"></i>
@@ -284,7 +284,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?=$domain."?page=analisa-kriteria";?>" class="nav-link">
+              <a href="<?= $domain . "?page=analisa-kriteria"; ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Kriteria</p>
               </a>
@@ -297,6 +297,42 @@
             </li> -->
           </ul>
 
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-database"></i>
+            <p>
+              Database Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <!-- <a href="pages/forms/general.html" class="nav-link"> -->
+              <a href="<?= $domain . "config/import/"; ?>" class="nav-link">
+                <i class="fas fa-file-import nav-icon"></i>
+                <p>Import</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= $domain . "config/import/export.php"; ?>" class="nav-link">
+                <i class="fas fa-file-export nav-icon"></i>
+                <p>Export</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="pages/forms/editors.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Editors</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="pages/forms/validation.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Validation</p>
+              </a>
+            </li> -->
+          </ul>
         </li>
         <!-- <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
