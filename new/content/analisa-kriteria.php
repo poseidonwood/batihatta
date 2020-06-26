@@ -42,7 +42,7 @@
                                   Project Name
                               </th>
                               <th style="width: 30%">
-                                  Team Members
+                                  Collaborator
                               </th>
                               <th>
                                   Project Progress
@@ -114,7 +114,6 @@
                                   </a>
                               </td>
                           </tr>
-
                       </tbody>
                   </table>
               </div>
