@@ -1,13 +1,13 @@
--- MariaDB dump 10.17  Distrib 10.4.11-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 5.5.32, for Win32 (x86)
 --
 -- Host: localhost    Database: hybriddb
 -- ------------------------------------------------------
--- Server version	10.4.11-MariaDB
+-- Server version	5.5.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -84,7 +84,8 @@ CREATE TABLE `tbl_bobot` (
   `laba` float DEFAULT NULL,
   `keamanan` float DEFAULT NULL,
   `biaya_sewa` float DEFAULT NULL,
-  `tata_letak` float DEFAULT NULL
+  `tata_letak` float DEFAULT NULL,
+  `hasil_bobot` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -179,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-26 17:39:47
+-- Dump completed on 2020-06-26 20:31:12
