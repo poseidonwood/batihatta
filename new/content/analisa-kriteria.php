@@ -36,13 +36,10 @@
                       <thead>
                           <tr>
                               <th style="width: 1%">
-                                  #
+                                  No
                               </th>
                               <th style="width: 20%">
-                                  Project Name
-                              </th>
-                              <th style="width: 30%">
-                                  Collaborator
+                                  Id bobot
                               </th>
                               <th>
                                   Project Progress
@@ -55,18 +52,17 @@
                           </tr>
                       </thead>
                       <tbody>
+                      <?php
+                        $sql = "SELECT * FROM tbl_bobot";
+                        $result = mysqli_query($koneksi, $sql);
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
                           <tr>
                               <td>
-                                  #
+                              <?=$row['NO']?>
                               </td>
                               <td>
-                                  <a>
-                                      AdminLTE v3
-                                  </a>
-                                  <br />
-                                  <small>
-                                      Created 01.01.2019
-                                  </small>
+                              <?=$row['NO']?>
                               </td>
                               <td>
                                   <ul class="list-inline">

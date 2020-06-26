@@ -18,6 +18,8 @@ include "view_component/src_asset.php";
         include "content/kriteria.php";
       } elseif ($_GET['page'] == 'analisa-kriteria') {
         include "content/analisa-kriteria.php";
+      } elseif ($_GET['page'] == 'alternatif') {
+        include "content/alternatif.php";
       } else {
         //jika halaman di akses salah di pindah ke login page dan hapus season
         // mengaktifkan session php
