@@ -11,6 +11,9 @@ $mysql_password = '';
 // Database name
 $mysql_database = 'hybriddb';
 
+$file_pointer = $filename;
+
+
 // Connect to MySQL server
 $koneksi = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database) or die('Error connecting to MySQL server: ' . mysqli_error());
 
@@ -34,4 +37,11 @@ foreach ($lines as $line) {
     $templine = '';
   }
 }
+// Use unlink() function to delete a file  
+if (!unlink($file_pointer)) {
+  echo ("$file_pointer cannot be deleted due to an error");
+} else {
+  echo ("$file_pointer has been deleted");
+}
+
 echo "<script>window.location.href='../../?m=import'</script>";

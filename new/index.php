@@ -18,6 +18,7 @@ include "view_component/src_asset.php";
         include "content/kriteria.php";
       } elseif ($_GET['page'] == 'analisa-kriteria') {
         include "content/analisa-kriteria.php";
+        include "view_component/js-hasil-kriteria.php";
       } elseif ($_GET['page'] == 'alternatif') {
         include "content/alternatif.php";
       } else {
