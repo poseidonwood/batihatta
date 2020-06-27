@@ -12,7 +12,7 @@ include "view_component/src_asset.php";
     include "config/notif.php";
     include "view_component/navbar.php";
     include "view_component/aside.php";
-    //
+    //page isset 
     if (isset($_GET['page'])) {
       if ($_GET['page'] == 'kriteria') {
         include "content/kriteria.php";
