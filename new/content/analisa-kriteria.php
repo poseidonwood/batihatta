@@ -286,12 +286,9 @@ $b5 = mysqli_fetch_array($query5);
 
                     <input type="hidden" name="id_total" placeholder="id total" id="id_total">
 
-
                     <input type="hidden" name="total_1" placeholder="total_1" id="total_1">
 
-
                     <input type="hidden" name="total_2" placeholder="total_2" id="total_2">
-
 
                     <input type="hidden" name="total_3" placeholder="total_3" id="total_3">
 
