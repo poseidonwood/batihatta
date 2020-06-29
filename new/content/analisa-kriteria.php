@@ -83,7 +83,7 @@ $b5 = mysqli_fetch_array($query5);
                             <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
                             <td align="center">
                                 <select onchange="excel_f4()" class="custom-select mr-sm-2" id="f4" name="nm_banding1">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -114,7 +114,7 @@ $b5 = mysqli_fetch_array($query5);
                             <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
                             <td align="center">
                                 <select onchange="excel_f5()" class="custom-select mr-sm-2" id="f5" class="form-control" name="nm_banding2">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -128,7 +128,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_g5()" class="custom-select mr-sm-2" id="g5" class="form-control" name="nm_banding3">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -155,7 +155,7 @@ $b5 = mysqli_fetch_array($query5);
                             <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
                             <td align="center">
                                 <select onchange="excel_f6()" class="custom-select mr-sm-2" id="f6" class="form-control" name="nm_banding4">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -169,7 +169,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_g6()" class="custom-select mr-sm-2" id="g6" class="form-control" name="nm_banding5">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -183,7 +183,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_h6()" class="custom-select mr-sm-2" id="h6" class="form-control" name="nm_banding6">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -207,7 +207,7 @@ $b5 = mysqli_fetch_array($query5);
                             <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
                             <td align="center">
                                 <select onchange="excel_f7()" class="custom-select mr-sm-2" id="f7" class="form-control" name="nm_banding7">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -221,7 +221,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_g7()" class="custom-select mr-sm-2" id="g7" class="form-control" name="nm_banding8">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -235,7 +235,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_h7()" class="custom-select mr-sm-2" id="h7" class="form-control" name="nm_banding9">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -249,7 +249,7 @@ $b5 = mysqli_fetch_array($query5);
                             </td>
                             <td align="center">
                                 <select onchange="excel_i7()" class="custom-select mr-sm-2" id="i7" class="form-control" name="nm_banding10">
-                                    <option value="0">--Masukkan Nilai--</option>
+                                    <option value="0">Input Value</option>
                                     <option value="1">1. Sama penting dengan</option>
                                     <option value="2">2. Mendekati sedikit lebih penting dari</option>
                                     <option value="3">3. Sedikit lebih penting dari</option>
@@ -278,7 +278,8 @@ $b5 = mysqli_fetch_array($query5);
                 </table>
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-warning" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-refresh"></i> Hitung Ulang</button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-success" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-spinner fa-spin"></i> Hitung Ulang</button>
                     <button class="btn btn-success" id="count_button" type="button" onclick="tampil_total()" name="hitung"><i class="fa fa-calculator"></i> Hitung Total</button>
                     <button id="submit_button" class="btn btn-primary" style="display: none;" type="button" data-toggle="modal" data-target="#exampleModalCenter" name="simpan"><i class="fa fa-play"></i> Proses Berikutnya</button>
                 </div>
