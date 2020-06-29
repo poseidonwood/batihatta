@@ -285,7 +285,7 @@ $b5 = mysqli_fetch_array($query5);
                 </div>
                 <form method="post" action="" id="form-user" class="form-user">
 
-                    <input type="hidden" name="id_total" placeholder="id total" id="id_total">
+                    <input type="hidden" name="id_total" placeholder="id total" value=<?= $_GET['id_bobot']; ?> id="id_total">
 
                     <input type="hidden" name="total_1" placeholder="total_1" id="total_1">
 

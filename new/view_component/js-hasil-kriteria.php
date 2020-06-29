@@ -1,4 +1,10 @@
 <script>
+  function Redirect() {
+    setTimeout("window.location.href = 'http://www.google.com'", 5000);
+  }
+
+
+
   function reload() {
     window.location.href = "<?= $domain; ?>?page=analisa-kriteria";
   }
@@ -98,7 +104,7 @@
           z.display = '';
           y.display = '';
           a.display = 'none';
-          document.getElementById("id_total").value = "<?= uniqid(); ?>";
+          // document.getElementById("id_total").value = "<?= uniqid(); ?>";
           //tampilan sub total f3:f7
           var f3 = document.getElementById("f3").innerHTML;
           var f4 = document.getElementById("f4").value;
@@ -185,7 +191,7 @@
           var total_5 = $("#total_5").val();
           $.ajax({
             url: '<?= $domain; ?>proses/simpan-hasil.php',
-            data: 'id_total=' + id_total + '&total_1=' + total_1 + '&total_2=' + total_2 + '&total_3=' + total_3 + '&total_4=' + total_4 + '&total_5=' + total_5,
+            data: 'id_bobot=' + id_total + '&total_1=' + total_1 + '&total_2=' + total_2 + '&total_3=' + total_3 + '&total_4=' + total_4 + '&total_5=' + total_5,
 
             success: function() {
               Swal.fire({
@@ -385,3 +391,19 @@
     </div>
   </div>
 </div>
+
+<!-- modal tambah hitung -->
+<div class="modal fade" id="mulaihitung" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border -5" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        &nbsp;&nbsp; <h3>Generate Code...</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- akhir modal tambah hitung-->

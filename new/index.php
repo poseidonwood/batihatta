@@ -17,8 +17,15 @@ include "view_component/src_asset.php";
       if ($_GET['page'] == 'kriteria') {
         include "content/kriteria.php";
       } elseif ($_GET['page'] == 'analisa-kriteria') {
+        include "content/hitung-status.php";
+        // include "content/analisa-kriteria.php";
+        include "view_component/js-hasil-kriteria.php";
+      } elseif ($_GET['page'] == 'analisa-kriteria-hitung') {
+        // include "content/hitung-status.php";
         include "content/analisa-kriteria.php";
         include "view_component/js-hasil-kriteria.php";
+      } elseif ($_GET['page'] == 'alternatif') {
+        include "content/alternatif.php";
       } elseif ($_GET['page'] == 'alternatif') {
         include "content/alternatif.php";
       } else {
