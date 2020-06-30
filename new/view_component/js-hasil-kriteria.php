@@ -213,9 +213,18 @@
       }
     })
 
+  }
 
-
-
+  function hitung_alternatif() {
+    Swal.fire({
+      title: 'Apakah data sudah diisi semua ?',
+      text: "Jika sudah di isi tekan tombol Yes.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ya, Cek Total'
+    })
   }
 </script>
 <!-- Button trigger modal -->

@@ -48,12 +48,12 @@ $b5 = mysqli_fetch_array($query5);
         <table class="table table-bordered table-striped table-sm">
           <thead class="thead-light">
             <tr>
-              <th>Kriteria</th>
-              <th><?php echo $b1['kriteria1']; ?></th>
-              <th><?php echo $b2['kriteria1']; ?></th>
-              <th><?php echo $b3['kriteria1']; ?></th>
-              <th><?php echo $b4['kriteria1']; ?></th>
-              <th><?php echo $b5['kriteria1']; ?></th>
+              <th class="text-center">Kriteria</th>
+              <th class="text-center"><?php echo $b1['kriteria1']; ?></th>
+              <th class="text-center"><?php echo $b2['kriteria1']; ?></th>
+              <th class="text-center"><?php echo $b3['kriteria1']; ?></th>
+              <th class="text-center"><?php echo $b4['kriteria1']; ?></th>
+              <th class="text-center"><?php echo $b5['kriteria1']; ?></th>
             </tr>
           </thead>
           <tbody>
@@ -167,7 +167,7 @@ $b5 = mysqli_fetch_array($query5);
         <div class="form-group">
           &nbsp;&nbsp;
           <button class="btn btn-success" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-spinner fa-spin"></i> Hitung Ulang</button>
-          <button class="btn btn-success" id="count_button" type="button" onclick="tampil_total()" name="hitung"><i class="fa fa-calculator"></i> Hitung Total</button>
+          <button class="btn btn-success" id="count_button" type="button" onclick="hitung_alternatif()" name="hitung"><i class="fa fa-calculator"></i> Proses</button> 
           <button id="submit_button" class="btn btn-primary" style="display: none;" type="button" data-toggle="modal" data-target="#exampleModalCenter" name="simpan"><i class="fa fa-play"></i> Proses Berikutnya</button>
         </div>
         <form method="post" action="" id="form-user" class="form-user">

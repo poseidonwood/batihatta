@@ -26,8 +26,7 @@ include "view_component/src_asset.php";
         include "view_component/js-hasil-kriteria.php";
       } elseif ($_GET['page'] == 'alternatif') {
         include "content/alternatif.php";
-      } elseif ($_GET['page'] == 'alternatif') {
-        include "content/alternatif.php";
+        include "view_component/js-hasil-kriteria.php";
       } else {
         //jika halaman di akses salah di pindah ke login page dan hapus season
         // mengaktifkan session php
