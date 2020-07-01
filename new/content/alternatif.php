@@ -10,6 +10,18 @@ $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
 $b4 = mysqli_fetch_array($query4);
 $b5 = mysqli_fetch_array($query5);
+if (isset($_GET['id_bobot'])) {
+  $id_bobot = $_GET['id_bobot'];
+  $c_sql = mysqli_query($koneksi, "select*from tbl_bobot where id_bobot='$id_bobot'");
+  $f_sql = mysqli_num_rows($c_sql);
+  if ($f_sql > 0) {
+  } else {
+    echo "<script>window.location.href='../new/pages/auth/?m=denied';</script>";
+  }
+} else {
+  echo "<script>window.location.href='../new/pages/auth/?m=denied';</script>";
+  // header("location:../new/pages/auth/?m=denied");
+}
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -45,131 +57,135 @@ $b5 = mysqli_fetch_array($query5);
         </div>
       </div>
       <div class="card-body p-0">
-        <table class="table table-bordered table-striped table-sm">
-          <thead class="thead-light">
-            <tr>
-              <th class="text-center">Kriteria</th>
-              <th class="text-center"><?php echo $b1['kriteria1']; ?></th>
-              <th class="text-center"><?php echo $b2['kriteria1']; ?></th>
-              <th class="text-center"><?php echo $b3['kriteria1']; ?></th>
-              <th class="text-center"><?php echo $b4['kriteria1']; ?></th>
-              <th class="text-center"><?php echo $b5['kriteria1']; ?></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th><?php echo $b1['kriteria1']; ?></th> <!-- Baris Umur -->
-              <td align="center">
-                <input type="number" value="f3" class="form-control w-50 " name="f3" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="g3" class="form-control w-50 " name="g3" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="h3" class="form-control w-50 " name="h3" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="i3" class="form-control w-50 " name="i3" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="j3" class="form-control w-50 " name="j3" placeholder="Masukan nilai">
-              </td>
-            </tr>
+        <form action="<?= $domain . "proses/proses-alternatif.php"; ?>" method="post">
+          <table class="table table-bordered table-striped table-sm">
+            <thead class="thead-light">
+              <tr>
+                <th class="text-center">Kriteria</th>
+                <th class="text-center"><?php echo $b1['kriteria1']; ?></th>
+                <th class="text-center"><?php echo $b2['kriteria1']; ?></th>
+                <th class="text-center"><?php echo $b3['kriteria1']; ?></th>
+                <th class="text-center"><?php echo $b4['kriteria1']; ?></th>
+                <th class="text-center"><?php echo $b5['kriteria1']; ?></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><?php echo $b1['kriteria1']; ?></th> <!-- Baris Umur -->
+                <td align="center">
+                  <input type="number" 0="f3" class="form-control w-50 " name="f3" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="g3" class="form-control w-50 " name="g3" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="h3" class="form-control w-50 " name="h3" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="i3" class="form-control w-50 " name="i3" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="j3" class="form-control w-50 " name="j3" placeholder="0" required>
+                </td>
+              </tr>
 
-            <tr>
-              <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
-              <td align="center">
-                <input type="number" value="f4" class="form-control w-50 " name="f4" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="g4" class="form-control w-50 " name="g4" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="h4" class="form-control w-50 " name="h4" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="i4" class="form-control w-50 " name="i4" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="j4" class="form-control w-50 " name="j4" placeholder="Masukan nilai">
-              </td>
+              <tr>
+                <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
+                <td align="center">
+                  <input type="number" 0="f4" class="form-control w-50 " name="f4" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="g4" class="form-control w-50 " name="g4" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="h4" class="form-control w-50 " name="h4" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="i4" class="form-control w-50 " name="i4" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="j4" class="form-control w-50 " name="j4" placeholder="0" required>
+                </td>
 
-            </tr>
+              </tr>
 
-            <tr>
-              <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
-              <td align="center">
-                <input type="number" value="f5" class="form-control w-50 " name="f5" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="g5" class="form-control w-50 " name="g5" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="h5" class="form-control w-50 " name="h5" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="i5" class="form-control w-50 " name="i5" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="j5" class="form-control w-50 " name="j5" placeholder="Masukan nilai">
-              </td>
-            </tr>
+              <tr>
+                <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
+                <td align="center">
+                  <input type="number" 0="f5" class="form-control w-50 " name="f5" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="g5" class="form-control w-50 " name="g5" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="h5" class="form-control w-50 " name="h5" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="i5" class="form-control w-50 " name="i5" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="j5" class="form-control w-50 " name="j5" placeholder="0" required>
+                </td>
+              </tr>
 
-            <tr>
-              <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
-              <td align="center">
-                <input type="number" value="f6" class="form-control w-50 " name="f6" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="g6" class="form-control w-50 " name="g6" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="h6" class="form-control w-50 " name="h6" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="i6" class="form-control w-50 " name="i6" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="j6" class="form-control w-50 " name="j6" placeholder="Masukan nilai">
-              </td>
-            </tr>
+              <tr>
+                <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
+                <td align="center">
+                  <input type="number" 0="f6" class="form-control w-50 " name="f6" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="g6" class="form-control w-50 " name="g6" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="h6" class="form-control w-50 " name="h6" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="i6" class="form-control w-50 " name="i6" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="j6" class="form-control w-50 " name="j6" placeholder="0" required>
+                </td>
+              </tr>
 
-            <tr>
-              <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
-              <td align="center">
-                <input type="number" value="f7" class="form-control w-50 " name="f7" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="g7" class="form-control w-50 " name="g7" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="h7" class="form-control w-50 " name="h7" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="i7" class="form-control w-50 " name="i7" placeholder="Masukan nilai">
-              </td>
-              <td align="center">
-                <input type="number" value="j7" class="form-control w-50 " name="j7" placeholder="Masukan nilai">
-              </td>
-            </tr>
+              <tr>
+                <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
+                <td align="center">
+                  <input type="number" 0="f7" class="form-control w-50 " name="f7" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="g7" class="form-control w-50 " name="g7" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="h7" class="form-control w-50 " name="h7" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="i7" class="form-control w-50 " name="i7" placeholder="0" required>
+                </td>
+                <td align="center">
+                  <input type="number" 0="j7" class="form-control w-50 " name="j7" placeholder="0" required>
+                </td>
+              </tr>
 
-            <tr id="result_tr" style="display: none;" class="bg-primary">
-              <td align="center">TOTAL</td>
-              <td class="text-center" id="sumf3f7">0</td>
-              <td class="text-center" id="sumg3g7">0</td>
-              <td class="text-center" id="sumh3h7">0</td>
-              <td class="text-center" id="sumi3i7">2</td>
-              <td class="text-center" id="sumj3j7">2</td>
-            </tr>
-          </tbody>
-        </table>
-        <br>
-        <div class="form-group">
-          &nbsp;&nbsp;
-          <button class="btn btn-success" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-spinner fa-spin"></i> Hitung Ulang</button>
-          <button class="btn btn-success" id="count_button" type="button" onclick="hitung_alternatif()" name="hitung"><i class="fa fa-calculator"></i> Proses</button> 
-          <button id="submit_button" class="btn btn-primary" style="display: none;" type="button" data-toggle="modal" data-target="#exampleModalCenter" name="simpan"><i class="fa fa-play"></i> Proses Berikutnya</button>
-        </div>
+              <tr id="result_tr" style="display: none;" class="bg-primary">
+                <td align="center">TOTAL</td>
+                <td class="text-center" id="sumf3f7">0</td>
+                <td class="text-center" id="sumg3g7">0</td>
+                <td class="text-center" id="sumh3h7">0</td>
+                <td class="text-center" id="sumi3i7">2</td>
+                <td class="text-center" id="sumj3j7">2</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div class="form-group">
+            &nbsp;&nbsp;
+            <input type="hidden" value="<?= $id_bobot; ?>" name="id_bobot">
+            <!-- <button class="btn btn-success" id="reload_button" style="display: none;" type="button" onclick="reload()" name="reload"><i class="fa fa-spinner fa-spin"></i> Hitung Ulang</button> -->
+            <button type="submit" class="btn btn-success" type="button" name="hitung"><i class="fa fa-calculator"></i> Proses</button>
+            <!-- <button id="submit_button" class="btn btn-primary" style="display: none;" type="button" data-toggle="modal" data-target="#exampleModalCenter" name="simpan"><i class="fa fa-play"></i> Proses Berikutnya</button> -->
+          </div>
+        </form>
+
         <form method="post" action="" id="form-user" class="form-user">
 
           <input type="hidden" name="id_total" placeholder="id total" id="id_total">

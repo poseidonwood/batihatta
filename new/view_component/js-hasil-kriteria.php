@@ -1,11 +1,9 @@
 <script>
-  function Redirect() {
-    setTimeout("window.location.href = 'http://www.google.com'", 5000);
+  function reload() {
+    window.location.href = "<?= $domain; ?>?page=analisa-kriteria-hitung";
   }
 
-
-
-  function reload() {
+  function hitung_ulang() {
     window.location.href = "<?= $domain; ?>?page=analisa-kriteria";
   }
 
@@ -94,15 +92,15 @@
     }).then((result) => {
       if (result.value) {
 
-
+        var id_bobot = $("#id_total").val();
         var x = document.getElementById('result_tr').style;
-        var y = document.getElementById('submit_button').style;
-        var z = document.getElementById('reload_button').style;
+        // var y = document.getElementById('submit_button').style;
+        // var z = document.getElementById('tampil_normalisasi').style;
         var a = document.getElementById('count_button').style;
         if (x.display === "none") {
-          x.display = 'table-row';
-          z.display = '';
-          y.display = '';
+          // x.display = 'table-row';
+          // z.display = '';
+          // y.display = '';
           a.display = 'none';
           // document.getElementById("id_total").value = "<?= uniqid(); ?>";
           //tampilan sub total f3:f7
@@ -181,9 +179,48 @@
           document.getElementById("m_j6").innerHTML = (parseFloat(j6) / hasil_sumj3j7).toFixed(2);
           document.getElementById("m_j7").innerHTML = (parseFloat(j7) / hasil_sumj3j7).toFixed(2);
 
+          //cari bobot
+          //bobot1
+          var b_m_f3 = document.getElementById("m_f3").innerHTML;
+          var b_m_g3 = document.getElementById("m_g3").innerHTML;
+          var b_m_h3 = document.getElementById("m_h3").innerHTML;
+          var b_m_i3 = document.getElementById("m_i3").innerHTML;
+          var b_m_j3 = document.getElementById("m_j3").innerHTML;
+          var bobot1 = (parseFloat(b_m_f3) + parseFloat(b_m_g3) + parseFloat(b_m_h3) + parseFloat(b_m_i3) + parseFloat(b_m_j3)) / 5;
+          //bobot2
+          var b_m_f4 = document.getElementById("m_f4").innerHTML;
+          var b_m_g4 = document.getElementById("m_g4").innerHTML;
+          var b_m_h4 = document.getElementById("m_h4").innerHTML;
+          var b_m_i4 = document.getElementById("m_i4").innerHTML;
+          var b_m_j4 = document.getElementById("m_j4").innerHTML;
+          var bobot2 = (parseFloat(b_m_f4) + parseFloat(b_m_g4) + parseFloat(b_m_h4) + parseFloat(b_m_i4) + parseFloat(b_m_j4)) / 5;
 
-          //
-          var id_total = $("#id_total").val();
+          //bobot3
+          var b_m_f5 = document.getElementById("m_f5").innerHTML;
+          var b_m_g5 = document.getElementById("m_g5").innerHTML;
+          var b_m_h5 = document.getElementById("m_h5").innerHTML;
+          var b_m_i5 = document.getElementById("m_i5").innerHTML;
+          var b_m_j5 = document.getElementById("m_j5").innerHTML;
+          var bobot3 = (parseFloat(b_m_f5) + parseFloat(b_m_g5) + parseFloat(b_m_h5) + parseFloat(b_m_i5) + parseFloat(b_m_j5)) / 5;
+
+          //bobot4
+          var b_m_f6 = document.getElementById("m_f6").innerHTML;
+          var b_m_g6 = document.getElementById("m_g6").innerHTML;
+          var b_m_h6 = document.getElementById("m_h6").innerHTML;
+          var b_m_i6 = document.getElementById("m_i6").innerHTML;
+          var b_m_j6 = document.getElementById("m_j6").innerHTML;
+          var bobot4 = (parseFloat(b_m_f6) + parseFloat(b_m_g6) + parseFloat(b_m_h6) + parseFloat(b_m_i6) + parseFloat(b_m_j6)) / 5;
+          //bobot5
+          var b_m_f7 = document.getElementById("m_f7").innerHTML;
+          var b_m_g7 = document.getElementById("m_g7").innerHTML;
+          var b_m_h7 = document.getElementById("m_h7").innerHTML;
+          var b_m_i7 = document.getElementById("m_i7").innerHTML;
+          var b_m_j7 = document.getElementById("m_j7").innerHTML;
+          var bobot5 = (parseFloat(b_m_f7) + parseFloat(b_m_g7) + parseFloat(b_m_h7) + parseFloat(b_m_i7) + parseFloat(b_m_j7)) / 5;
+          //akhir cari bobot
+
+
+          //simpen total di tbl_total
           var total_1 = $("#total_1").val();
           var total_2 = $("#total_2").val();
           var total_3 = $("#total_3").val();
@@ -191,16 +228,19 @@
           var total_5 = $("#total_5").val();
           $.ajax({
             url: '<?= $domain; ?>proses/simpan-hasil.php',
-            data: 'id_bobot=' + id_total + '&total_1=' + total_1 + '&total_2=' + total_2 + '&total_3=' + total_3 + '&total_4=' + total_4 + '&total_5=' + total_5,
+            data: 'id_bobot=' + id_bobot + '&total_1=' + total_1 + '&total_2=' + total_2 + '&total_3=' + total_3 + '&total_4=' + total_4 + '&total_5=' + total_5 + '&bobot=' + bobot1 + '&bobot2=' + bobot2 + '&bobot3=' + bobot3 + '&bobot4=' + bobot4 + '&bobot5=' + bobot5,
 
             success: function() {
               Swal.fire({
                 title: '',
-                text: "Klik Next proses",
+                text: "Lanjut Ke Proses Berikutnya",
                 icon: 'success',
-                showCancelButton: false
+                showCancelButton: false,
+                showConfirmButton: false
+
 
               })
+              window.location.href = '<?= $domain . "?page=analisa-kriteria-hitung&id_bobot=" . $id_bobot; ?>';
             }
           });
 
@@ -224,6 +264,14 @@
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Ya, Cek Total'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
     })
   }
 </script>

@@ -1,3 +1,10 @@
+ <?php
+  if (isset($_GET['ranking'])) {
+    $id_bobot = $_GET['ranking'];
+    // echo "<script>alert('$id_bobot');</script>";
+  } else {
+    echo "<script>window.location.href='../new/pages/auth/?m=denied';</script>";
+  } ?>
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
    <!-- Content Header (Page header) -->
@@ -5,12 +12,12 @@
      <div class="container-fluid">
        <div class="row mb-2">
          <div class="col-sm-6">
-           <h1>Analisa Kriteria</h1>
+           <h1>Ranking Id Analisa #<?= $id_bobot; ?></h1>
          </div>
          <div class="col-sm-6">
            <ol class="breadcrumb float-sm-right">
              <li class="breadcrumb-item"><a href="#">Home</a></li>
-             <li class="breadcrumb-item active">Analisa Kriteria</li>
+             <li class="breadcrumb-item active">Ranking</li>
            </ol>
          </div>
        </div>
@@ -23,8 +30,8 @@
        <div class="col-md-12">
          <div class="card card-success">
            <div class="card-header">
-             <a href="#" class="btn btn-primary" onclick="alihkan()">
-               <h3 class="card-title"><i class="fas fa-plus"></i> Mulai Hitung</h3>
+             <a href="#" class="btn btn-primary" onclick="hitung_ulang()">
+               <h3 class="card-title"><i class="fas fa-angle-left"></i> Hitung Kembali</h3>
              </a>
 
              <div class="card-tools">
@@ -35,55 +42,45 @@
            <div class="card-body">
              <?php
               $no = 1;
-              $sql_bobot = mysqli_query($koneksi, "select *from tbl_bobot");
-              $rows = mysqli_num_rows($sql_bobot);
+              $sql_ranking = mysqli_query($koneksi, "select *from tbl_ranking where id_bobot='$id_bobot' order by nilai_v desc");
+              $rows = mysqli_num_rows($sql_ranking);
               if ($rows > 0) {
               ?>
                <table class="table table-bordered">
                  <thead>
                    <tr>
-                     <th class="text-center align-middle">#</th>
-                     <th class="text-center align-middle">Id</th>
-                     <th class="text-center align-middle">Status</th>
-                     <th class="text-center align-middle">Aksi</th>
+                     <th class="text-center align-middle">Ranking</th>
+                     <th class="text-center align-middle">Nilai</th>
+                     <!-- <th class="text-center align-middle">Status</th>
+                     <th class="text-center align-middle">Aksi</th> -->
                    </tr>
                  </thead>
                  <tbody>
                    <?php
-                    while ($f_bobot = mysqli_fetch_array($sql_bobot)) {
+                    while ($f_ranking = mysqli_fetch_array($sql_ranking)) {
                       // $no1 = $no++;
-                      $id_bobot = $f_bobot['id_bobot'];
-                      $status_bobot = $f_bobot['status_bobot'];
+                      $nilai_v = $f_ranking['nilai_v'];
+                      // $status_bobot = $f_ranking['status_bobot'];
                     ?>
                      <tr>
 
                        <td class="text-center align-middle"><?= $no++; ?></td>
-                       <td class="text-center align-middle"><?= $id_bobot; ?></td>
-                       <td class="text-center align-middle"><?php
-                                                            if ($status_bobot == "PROSES HITUNG") {
-                                                              echo "<span class='badge bg-success'> $status_bobot</span>";
-                                                            } elseif ($status_bobot == "SELESAI - RANKING KELUAR") {
-                                                              echo "<span class='badge bg-info'> $status_bobot</span>";
-                                                            } else {
-                                                              echo "<span class='badge bg-primary'> $status_bobot</span>";
-                                                            } ?></td>
-                       <td class="text-center align-middle">
-                         <div class="btn-group btn-group-sm">
-                           <!-- <a class='btn btn-primary btn-sm' href="<?= $domain . "?page=kriteria&id_bobot=" . $id_bobot; ?>">
-                           <i class='fas fa-edit'></i>
-                         </a> -->
-                           <a class='btn btn-success btn-sm' href="<?php
-                                                                    if ($status_bobot == "SELESAI - RANKING KELUAR") {
-                                                                      echo $domain . "?page=ranking&ranking=" . $id_bobot;
-                                                                    } else {
-                                                                      echo $domain . "?page=analisa-kriteria-hitung&id_bobot=" . $id_bobot;
-                                                                    } ?>">
-                             <i class='fas fa-eye'></i>
-                           </a>
-                           <a class='btn btn-danger btn-sm' href="<?= $domain . "proses/hapus-bobot.php?id_bobot=" . $id_bobot; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
-                             <i class='fas fa-trash'></i>
-                           </a>
-                         </div>
+                       <td class="text-center align-middle"><?= $nilai_v; ?></td>
+                       <!-- <td class="text-center align-middle"><?php
+                                                                  if ($status_bobot == "PROSES HITUNG") {
+                                                                    echo "<span class='badge bg-success'> $status_bobot</span>";
+                                                                  } else {
+                                                                    echo "<span class='badge bg-primary'> $status_bobot</span>";
+                                                                  } ?></td>
+                       <td class="text-center align-middle"> -->
+                       <!-- <div class="btn-group btn-group-sm">
+                         <a class='btn btn-success btn-sm' href="<?= $domain . "?page=analisa-kriteria-hitung&id_bobot=" . $id_bobot; ?>">
+                           <i class='fas fa-eye'></i>
+                         </a>
+                         <a class='btn btn-danger btn-sm' href="<?= $domain . "proses/hapus-bobot.php?id_bobot=" . $id_bobot; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
+                           <i class='fas fa-trash'></i>
+                         </a>
+                       </div> -->
                        </td>
                      </tr>
                  <?php

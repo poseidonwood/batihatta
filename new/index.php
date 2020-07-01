@@ -18,14 +18,18 @@ include "view_component/src_asset.php";
         include "content/kriteria.php";
       } elseif ($_GET['page'] == 'analisa-kriteria') {
         include "content/hitung-status.php";
-        // include "content/analisa-kriteria.php";
         include "view_component/js-hasil-kriteria.php";
       } elseif ($_GET['page'] == 'analisa-kriteria-hitung') {
-        // include "content/hitung-status.php";
         include "content/analisa-kriteria.php";
         include "view_component/js-hasil-kriteria.php";
       } elseif ($_GET['page'] == 'alternatif') {
         include "content/alternatif.php";
+        include "view_component/js-hasil-kriteria.php";
+      } elseif ($_GET['page'] == 'normalisasi-terbobot') {
+        include "content/normalisasi-terbobot.php";
+        include "view_component/js-hasil-kriteria.php";
+      } elseif ($_GET['page'] == 'ranking') {
+        include "content/ranking.php";
         include "view_component/js-hasil-kriteria.php";
       } else {
         //jika halaman di akses salah di pindah ke login page dan hapus season

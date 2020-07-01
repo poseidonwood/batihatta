@@ -215,16 +215,16 @@
             <li class="nav-item">
               <!-- <a href="pages/forms/general.html" class="nav-link"> -->
               <a href="<?= "$domain?page=kriteria"; ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Kriteria</p>
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Data Kriteria</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?= "$domain?page=alternatif"; ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Alternatif</p>
               </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
               <a href="pages/forms/editors.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -277,16 +277,16 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="pages/tables/simple.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Alternatif</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="<?= $domain . "?page=analisa-kriteria"; ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Kriteria</p>
+                <p>Hitung Analisa Kriteria</p>
               </a>
             </li>
             <!-- <li class="nav-item">
