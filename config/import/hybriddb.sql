@@ -37,7 +37,7 @@ CREATE TABLE `domain` (
 
 LOCK TABLES `domain` WRITE;
 /*!40000 ALTER TABLE `domain` DISABLE KEYS */;
-INSERT INTO `domain` VALUES (1,'http://localhost/batihatta/new/','Sistem Pendukung Keputusan : Pemilihan Lokasi Stand','Y');
+INSERT INTO `domain` VALUES (1,'http://localhost/batihatta/','Sistem Pendukung Keputusan : Pemilihan Lokasi Stand','Y');
 /*!40000 ALTER TABLE `domain` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,8 +93,32 @@ CREATE TABLE `tb_total` (
 
 LOCK TABLES `tb_total` WRITE;
 /*!40000 ALTER TABLE `tb_total` DISABLE KEYS */;
-INSERT INTO `tb_total` VALUES ('2020-06-29 23:35:14',18,17.5,10.75,5.56,1.79,'2020-06-30 00:03:07'),('3Cs8At',20,13,10,5.63,1.83,'2020-06-30 00:41:14'),('OCIWXB',17,16.5,11.83,3.45,2.23,'2020-06-30 00:43:11'),('rEOWRX',18,18.5,12,5.43,1.84,'2020-06-30 00:53:59'),('vxKmcJ',17,19,14.66,5.44,1.76,'2020-06-30 00:48:17'),('XKEcg7',17,16.5,11.83,3.45,2.23,'2020-06-30 00:42:41');
+INSERT INTO `tb_total` VALUES ('cTY520',26,21.14,12.31,5.42,1.87,'2020-07-01 13:20:37'),('kcn2WM',20,15.33,13.33,5.59,2.12,'2020-07-02 00:08:38'),('knEB0a',11,12.5,7.83,5.91,2.16,'2020-07-01 18:04:52'),('rKUnDx',20,8.2,6.53,4.25,2.53,'2020-07-01 22:39:57'),('UAdX1u',20,8.2,6.53,4.25,2.53,'2020-07-01 18:12:25');
 /*!40000 ALTER TABLE `tb_total` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_alter`
+--
+
+DROP TABLE IF EXISTS `tbl_alter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_alter` (
+  `id_alter` int(10) NOT NULL,
+  `nm_alter` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_alter`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_alter`
+--
+
+LOCK TABLES `tbl_alter` WRITE;
+/*!40000 ALTER TABLE `tbl_alter` DISABLE KEYS */;
+INSERT INTO `tbl_alter` VALUES (63789,'JAVA MALL'),(307249,'TRANSMART'),(731265,'PARAGON'),(921037,'DP MALL'),(983752,'CITRA LAND ');
+/*!40000 ALTER TABLE `tbl_alter` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -105,14 +129,14 @@ DROP TABLE IF EXISTS `tbl_alternatif`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_alternatif` (
-  `id_alternatif` int(15) NOT NULL,
-  `nama_alternatif` varchar(255) NOT NULL,
-  `pembagi` float DEFAULT NULL,
-  `lokasi` float DEFAULT NULL,
-  `laba` float DEFAULT NULL,
-  `keamanan` float DEFAULT NULL,
-  `biaya_sewa` float DEFAULT NULL,
-  `tata_letak` float DEFAULT NULL,
+  `id_alternatif` varchar(255) NOT NULL,
+  `id_bobot` varchar(255) NOT NULL,
+  `pembagi1` float DEFAULT NULL,
+  `pembagi2` float DEFAULT NULL,
+  `pembagi3` float DEFAULT NULL,
+  `pembagi4` float DEFAULT NULL,
+  `pembagi5` float DEFAULT NULL,
+  `created_time` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_alternatif`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -123,7 +147,7 @@ CREATE TABLE `tbl_alternatif` (
 
 LOCK TABLES `tbl_alternatif` WRITE;
 /*!40000 ALTER TABLE `tbl_alternatif` DISABLE KEYS */;
-INSERT INTO `tbl_alternatif` VALUES (1,'Test',1,2,3,4,5,6);
+INSERT INTO `tbl_alternatif` VALUES ('371546','825069',143.513,118.558,150.393,132.008,162.975,'2020-07-01 22:49:10'),('938145','482017',58.8727,141.584,156.825,136.704,140.862,'2020-07-02 00:09:34');
 /*!40000 ALTER TABLE `tbl_alternatif` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,16 +159,18 @@ DROP TABLE IF EXISTS `tbl_bobot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_bobot` (
-  `id_bobot` int(100) NOT NULL AUTO_INCREMENT,
+  `id_bobot` varchar(100) NOT NULL,
   `id_total` varchar(100) DEFAULT NULL,
-  `p_vector` float DEFAULT NULL,
   `bobot` float DEFAULT NULL,
-  `eigen_v` float DEFAULT NULL,
+  `bobot2` float DEFAULT NULL,
+  `bobot3` float DEFAULT NULL,
+  `bobot4` float DEFAULT NULL,
+  `bobot5` float DEFAULT NULL,
   `created_time` datetime NOT NULL DEFAULT current_timestamp(),
   `status_bobot` varchar(255) DEFAULT NULL,
   `status_hitung` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_bobot`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +179,7 @@ CREATE TABLE `tbl_bobot` (
 
 LOCK TABLES `tbl_bobot` WRITE;
 /*!40000 ALTER TABLE `tbl_bobot` DISABLE KEYS */;
-INSERT INTO `tbl_bobot` VALUES (1,'rEOWRX',NULL,NULL,NULL,'2020-06-29 23:05:02','MENCARI NILAI BOBOT','INPUT BOBOT');
+INSERT INTO `tbl_bobot` VALUES ('482017','kcn2WM',0.042,0.102,0.194,0.268,0.4,'2020-07-02 00:08:09','SELESAI - RANKING KELUAR','INPUT BOBOT'),('725018',NULL,NULL,NULL,NULL,NULL,NULL,'2020-07-02 00:18:49','PROSES HITUNG','INPUT BOBOT'),('825069','rKUnDx',0.048,0.148,0.204,0.238,0.364,'2020-07-01 22:38:36','SELESAI - RANKING KELUAR','INPUT BOBOT');
 /*!40000 ALTER TABLE `tbl_bobot` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,6 +205,33 @@ LOCK TABLES `tbl_kriteria` WRITE;
 /*!40000 ALTER TABLE `tbl_kriteria` DISABLE KEYS */;
 INSERT INTO `tbl_kriteria` VALUES (4,'LOKASI'),(5,'LABA'),(6,'KEAMANAN'),(7,'BIAYA SEWA'),(8,'TATA LETAK');
 /*!40000 ALTER TABLE `tbl_kriteria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_ranking`
+--
+
+DROP TABLE IF EXISTS `tbl_ranking`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_ranking` (
+  `id_ranking` varchar(255) NOT NULL,
+  `id_bobot` varchar(255) NOT NULL,
+  `id_alternatif` varchar(255) NOT NULL,
+  `nilai_v` float DEFAULT NULL,
+  `created_time` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id_ranking`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_ranking`
+--
+
+LOCK TABLES `tbl_ranking` WRITE;
+/*!40000 ALTER TABLE `tbl_ranking` DISABLE KEYS */;
+INSERT INTO `tbl_ranking` VALUES ('014653','482017','938145',0.696707,'2020-07-02 00:09:34'),('175236','825069','371546',0.66271,'2020-07-01 22:49:10'),('312987','825069','371546',0.745486,'2020-07-01 22:49:10'),('349162','482017','938145',0.825113,'2020-07-02 00:09:34'),('429703','482017','938145',0.266434,'2020-07-02 00:09:34'),('597680','482017','938145',0.591599,'2020-07-02 00:09:34'),('790425','825069','371546',0.75968,'2020-07-01 22:49:10'),('823946','482017','938145',0.429706,'2020-07-02 00:09:34'),('965380','825069','371546',0.157199,'2020-07-01 22:49:10'),('976853','825069','371546',0.299227,'2020-07-01 22:49:10');
+/*!40000 ALTER TABLE `tbl_ranking` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -239,4 +292,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-30 13:54:55
+-- Dump completed on 2020-07-02  1:30:42

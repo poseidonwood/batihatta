@@ -2,7 +2,7 @@
 // // include "../database.php";
 // // $export = exec("cmd /c C:/xampp/htdocs/batihatta/new/config/import/export.bat");
 // // $export = // Opening a directory 
-$export = exec("start C:/xampp/htdocs/batihatta/new/config/import/export.bat");
+$export = exec("start C:/xampp/htdocs/batihatta/config/import/export.bat");
 
 echo "<script>window.location.href='../../?m=export'</script>";
 // if ($export) {
