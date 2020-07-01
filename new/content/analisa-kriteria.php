@@ -127,7 +127,7 @@ $b5 = mysqli_fetch_array($query5);
                         <table class="table table-bordered table-striped table-sm">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Alternatif</th>
+                                    <th>Alternatifgit </th>
                                     <th><?php echo $b1['kriteria1']; ?></th>
                                     <th><?php echo $b2['kriteria1']; ?></th>
                                     <th><?php echo $b3['kriteria1']; ?></th>
