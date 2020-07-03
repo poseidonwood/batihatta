@@ -19,7 +19,7 @@ if ($rows > 0) {
       echo "<script>window.location.href='$domain?m=ganti-sukses';</script>";
     }
   } else {
-    echo "<script>window.location.href='$domain?m=passowrd-salah';</script>";
+    echo "<script>window.location.href='$domain?m=password-salah';</script>";
   }
 } else {
   echo "<script>window.location.href='$domain?m=ganti-gagal';</script>";
