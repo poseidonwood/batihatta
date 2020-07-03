@@ -115,7 +115,7 @@
     <!-- Profile Dropdown Menu -->
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
-        <i> <img src="dist/img/user2-160x160.jpg" height="18" width="18" class="img-circle" alt="User Image"></i>
+        <i> <img src="dist/img/default-picture.jpg" height="18" width="18" class="img-circle" alt="User Image"></i>
         <!-- <span class="badge badge-warning navbar-badge">15</span> -->
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
