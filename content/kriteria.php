@@ -57,7 +57,7 @@
                          <a class='btn btn-primary btn-sm' href="<?= $domain . "?page=kriteria&id_kriteria=" . $id_kriteria; ?>">
                            <i class='fas fa-edit'></i>
                          </a>
-                         <a class='btn btn-danger btn-sm' href="proses-hapus.php?id=<?= $id_kriteria; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
+                         <a class='btn btn-danger btn-sm' href="<?= $domain; ?>proses/hapus-kriteria.php?id_kriteria=<?= $id_kriteria; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
                            <i class='fas fa-trash'></i>
                          </a>
                        </div>
