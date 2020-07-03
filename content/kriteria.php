@@ -100,10 +100,10 @@
                  <center>
                    <!-- <h5><strong>Update </strong></h5> -->
                  </center>
-                 <form action="#" method="post">
+                 <form action="<?= $domain . "proses/edit-kriteria.php"; ?>" method="post">
                    <div class="form-group">
                      <label for="inputEstimatedBudget">Id Kriteria</label>
-                     <input type="text" id="inputEstimatedBudget" name="id_kriteria" value="<?= $id_kriteria; ?>" class=" form-control"  readonly>
+                     <input type="text" id="inputEstimatedBudget" name="id_kriteria" value="<?= $id_kriteria; ?>" class=" form-control" readonly>
                    </div>
                    <div class="form-group">
                      <label for="inputSpentBudget">Nama Kriteria</label>
@@ -118,8 +118,8 @@
                 }
               } else {
                 ?>
-               <form action="<?=$domain."proses/save-kriteria.php";?>" method="post">
-                <!--  <div class="form-group">
+               <form action="<?= $domain . "proses/save-kriteria.php"; ?>" method="post">
+                 <!--  <div class="form-group">
                    <label for="inputEstimatedBudget">Id Kriteria</label>
                    <input type="text" id="inputEstimatedBudget" name="id_kriteria" class="form-control" autofocus>
                  </div> -->
