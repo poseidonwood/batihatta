@@ -25,6 +25,12 @@ function generateRandomString5($length = 6)
 {
   return substr(str_shuffle(str_repeat($x = '0123456789', ceil($length / strlen($x)))), 1, $length);
 }
+$a1 = $_GET['a1'];
+$a2 = $_GET['a2'];
+$a3 = $_GET['a3'];
+$a4 = $_GET['a4'];
+$a5 = $_GET['a5'];
+
 $id_alternatif = generateRandomString();
 $id_ranking1 = generateRandomString();
 $id_ranking2 = generateRandomString2();
@@ -202,15 +208,15 @@ if ($simpan) {
     $v5 = $d5min / ($d5min + $d5plus);
     //simpan db 
     $simpan_ranking1 = mysqli_query($koneksi, "insert into tbl_ranking values 
-    ('$id_ranking1','$id_bobot','$id_alternatif','$v1',current_timestamp())");
+    ('$id_ranking1','$id_bobot','$id_alternatif','$v1','$a1',current_timestamp())");
     $simpan_ranking2 = mysqli_query($koneksi, "insert into tbl_ranking values 
-    ('$id_ranking2','$id_bobot','$id_alternatif','$v2',current_timestamp())");
+    ('$id_ranking2','$id_bobot','$id_alternatif','$v2','$a2',current_timestamp())");
     $simpan_ranking3 = mysqli_query($koneksi, "insert into tbl_ranking values 
-    ('$id_ranking3','$id_bobot','$id_alternatif','$v3',current_timestamp())");
+    ('$id_ranking3','$id_bobot','$id_alternatif','$v3','$a3',current_timestamp())");
     $simpan_ranking4 = mysqli_query($koneksi, "insert into tbl_ranking values 
-    ('$id_ranking4','$id_bobot','$id_alternatif','$v4',current_timestamp())");
+    ('$id_ranking4','$id_bobot','$id_alternatif','$v4','$a4',current_timestamp())");
     $simpan_ranking5 = mysqli_query($koneksi, "insert into tbl_ranking values 
-    ('$id_ranking5','$id_bobot','$id_alternatif','$v5',current_timestamp())");
+    ('$id_ranking5','$id_bobot','$id_alternatif','$v5','$a5',current_timestamp())");
     //update status bobot
     $update_r = mysqli_query($koneksi, "update tbl_bobot set status_bobot='SELESAI - RANKING KELUAR' where id_bobot='$id_bobot'");
     echo "<script>window.location.href='$domain?page=normalisasi-terbobot&id_bobot=$id_bobot&matrixf3=$matrixf3&matrixf4=$matrixf4&matrixf5=$matrixf5&matrixf6=$matrixf6&matrixf7=$matrixf7&matrixg3=$matrixg3&matrixg4=$matrixg4&matrixg5=$matrixg5&matrixg6=$matrixg6&matrixg7=$matrixg7&matrixh3=$matrixh3&matrixh4=$matrixh4&matrixh5=$matrixh5&matrixh6=$matrixh6&matrixh7=$matrixh7&matrixi3=$matrixi3&matrixi4=$matrixi4&matrixi5=$matrixi5&matrixi6=$matrixi6&matrixi7=$matrixi7&matrixj3=$matrixj3&matrixj4=$matrixj4&matrixj5=$matrixj5&matrixj6=$matrixj6&matrixj7=$matrixj7';</script>";

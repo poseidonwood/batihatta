@@ -50,6 +50,7 @@
                  <thead>
                    <tr>
                      <th class="text-center align-middle">Ranking</th>
+                     <th class="text-center align-middle">Nama Alternatif</th>
                      <th class="text-center align-middle">Nilai</th>
                      <!-- <th class="text-center align-middle">Status</th>
                      <th class="text-center align-middle">Aksi</th> -->
@@ -60,11 +61,13 @@
                     while ($f_ranking = mysqli_fetch_array($sql_ranking)) {
                       // $no1 = $no++;
                       $nilai_v = $f_ranking['nilai_v'];
+                      $nm_alter = $f_ranking['nm_alter'];
                       // $status_bobot = $f_ranking['status_bobot'];
                     ?>
                      <tr>
 
                        <td class="text-center align-middle"><?= $no++; ?></td>
+                       <td class="text-center align-middle"><?= $nm_alter; ?></td>
                        <td class="text-center align-middle"><?= $nilai_v; ?></td>
                        <!-- <td class="text-center align-middle"><?php
                                                                   if ($status_bobot == "PROSES HITUNG") {

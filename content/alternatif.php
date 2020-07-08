@@ -10,6 +10,11 @@ $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
 $b4 = mysqli_fetch_array($query4);
 $b5 = mysqli_fetch_array($query5);
+$bb1 = $b1['kriteria1'];
+$bb2 = $b2['kriteria1'];
+$bb3 = $b3['kriteria1'];
+$bb4 = $b4['kriteria1'];
+$bb5 = $b5['kriteria1'];
 // deklarasi utk menampilkan nama alternatif
 $query6 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='47238'");
 $query7 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='63789'");
@@ -21,6 +26,11 @@ $a2 = mysqli_fetch_array($query7);
 $a3 = mysqli_fetch_array($query8);
 $a4 = mysqli_fetch_array($query9);
 $a5 = mysqli_fetch_array($query10);
+$aa1 = $a1['nm_alter'];
+$aa2 = $a2['nm_alter'];
+$aa3 = $a3['nm_alter'];
+$aa4 = $a4['nm_alter'];
+$aa5 = $a5['nm_alter'];
 if (isset($_GET['id_bobot'])) {
   $id_bobot = $_GET['id_bobot'];
   $c_sql = mysqli_query($koneksi, "select*from tbl_bobot where id_bobot='$id_bobot'");
@@ -68,16 +78,16 @@ if (isset($_GET['id_bobot'])) {
         </div>
       </div>
       <div class="card-body p-0">
-        <form action="<?= $domain . "proses/proses-alternatif.php"; ?>" method="post">
+        <form action="<?= $domain . "proses/proses-alternatif.php?a1=$aa1&a2=$aa2&a3=$aa3&a4=$aa4&a5=$aa5"; ?>" method="post">
           <table class="table table-bordered table-striped table-sm">
             <thead class="thead-light">
               <tr>
                 <th class="text-center">Tabel Kepentingan</th>
-                <th class="text-center"><?php echo $b1['kriteria1']; ?></th>
-                <th class="text-center"><?php echo $b2['kriteria1']; ?></th>
-                <th class="text-center"><?php echo $b3['kriteria1']; ?></th>
-                <th class="text-center"><?php echo $b4['kriteria1']; ?></th>
-                <th class="text-center"><?php echo $b5['kriteria1']; ?></th>
+                <th class="text-center"><?= $bb1; ?></th>
+                <th class="text-center"><?= $bb2; ?></th>
+                <th class="text-center"><?= $bb3; ?></th>
+                <th class="text-center"><?= $bb4; ?></th>
+                <th class="text-center"><?= $bb5; ?></th>
               </tr>
             </thead>
             <tbody>
