@@ -1,5 +1,5 @@
 <?php
-//query tbl perbandingan
+//query tbl perbandingan 
 $query1 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B01'");
 $query2 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B02'");
 $query3 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B03'");
@@ -10,6 +10,17 @@ $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
 $b4 = mysqli_fetch_array($query4);
 $b5 = mysqli_fetch_array($query5);
+// deklarasi utk menampilkan nama alternatif
+$query6 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='47238'");
+$query7 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='63789'");
+$query8 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='253816'");
+$query9 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='307249'");
+$query10 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='452136'");
+$a1 = mysqli_fetch_array($query6);
+$a2 = mysqli_fetch_array($query7);
+$a3 = mysqli_fetch_array($query8);
+$a4 = mysqli_fetch_array($query9);
+$a5 = mysqli_fetch_array($query10);
 if (isset($_GET['id_bobot'])) {
   $id_bobot = $_GET['id_bobot'];
   $c_sql = mysqli_query($koneksi, "select*from tbl_bobot where id_bobot='$id_bobot'");
@@ -61,7 +72,7 @@ if (isset($_GET['id_bobot'])) {
           <table class="table table-bordered table-striped table-sm">
             <thead class="thead-light">
               <tr>
-                <th class="text-center">Kriteria</th>
+                <th class="text-center">Tabel Kepentingan</th>
                 <th class="text-center"><?php echo $b1['kriteria1']; ?></th>
                 <th class="text-center"><?php echo $b2['kriteria1']; ?></th>
                 <th class="text-center"><?php echo $b3['kriteria1']; ?></th>
@@ -71,7 +82,7 @@ if (isset($_GET['id_bobot'])) {
             </thead>
             <tbody>
               <tr>
-                <th><?php echo $b1['kriteria1']; ?></th> <!-- Baris Umur -->
+                <th><?php echo $a1['nm_alter']; ?></th> <!-- Baris Umur -->
                 <td align="center">
                   <input type="number" 0="f3" class="form-control w-50 " name="f3" placeholder="0" required>
                 </td>
@@ -90,7 +101,7 @@ if (isset($_GET['id_bobot'])) {
               </tr>
 
               <tr>
-                <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
+                <th><?php echo $a2['nm_alter']; ?></th> <!-- Baris IPK -->
                 <td align="center">
                   <input type="number" 0="f4" class="form-control w-50 " name="f4" placeholder="0" required>
                 </td>
@@ -110,7 +121,7 @@ if (isset($_GET['id_bobot'])) {
               </tr>
 
               <tr>
-                <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
+                <th><?php echo $a3['nm_alter']; ?></th> <!-- baris Penghasilan Orangtua -->
                 <td align="center">
                   <input type="number" 0="f5" class="form-control w-50 " name="f5" placeholder="0" required>
                 </td>
@@ -129,7 +140,7 @@ if (isset($_GET['id_bobot'])) {
               </tr>
 
               <tr>
-                <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
+                <th><?php echo $a4['nm_alter']; ?></th> <!-- baris semester -->
                 <td align="center">
                   <input type="number" 0="f6" class="form-control w-50 " name="f6" placeholder="0" required>
                 </td>
@@ -148,7 +159,7 @@ if (isset($_GET['id_bobot'])) {
               </tr>
 
               <tr>
-                <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
+                <th><?php echo $a5['nm_alter']; ?></th> <!-- baris semester -->
                 <td align="center">
                   <input type="number" 0="f7" class="form-control w-50 " name="f7" placeholder="0" required>
                 </td>

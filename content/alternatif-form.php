@@ -54,10 +54,10 @@
                      <td class="text-center align-middle"><?= $nm_alter; ?></td>
                      <td class="text-center align-middle">
                        <div class="btn-group btn-group-sm">
-                         <a class='btn btn-primary btn-sm' href="<?= $domain . "?page=form-alternatif&id_alternatif=" . $id_alter; ?>">
+                         <a class='btn btn-primary btn-sm' href="<?= $domain . "?page=form-alternatif&id_alter=" . $id_alter; ?>">
                            <i class='fas fa-edit'></i>
                          </a>
-                         <a class='btn btn-danger btn-sm' href="proses-hapus.php?id=<?= $id_alter; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
+                        <a class='btn btn-danger btn-sm' href="<?= $domain; ?>proses/hapus-alternatif.php?id_alter=<?= $id_alter; ?>" onclick="return confirm(' Anda yakin ingin menghapus?');">
                            <i class='fas fa-trash'></i>
                          </a>
                        </div>
@@ -93,21 +93,21 @@
               if (isset($_GET['id_alter'])) {
                 $id_alter = $_GET['id_alter'];
                 $s_edit_alter = mysqli_query($koneksi, "select *from tbl_alter where id_alter = '$id_alter'");
-                while ($f_edit_alter = mysqli_fetch_array($s_edit_alternatif)) {
+                while ($f_edit_alter = mysqli_fetch_array($s_edit_alter)) {
                   $nm_alter = $f_edit_alter['nm_alter'];
                   $id_alter = $f_edit_alter['id_alter'];
               ?>
                  <center>
                    <!-- <h5><strong>Update </strong></h5> -->
                  </center>
-                 <form action="#" method="post">
+                 <form action="<?= $domain . "proses/edit-alternatif.php"; ?>" method="post">
                    <div class="form-group">
-                     <label for="inputEstimatedBudget">Id alternatif</label>
-                     <input type="text" id="inputEstimatedBudget" name="id_alternatif" value="<?= $id_alter; ?>" class=" form-control" readonly>
+                     <label for="inputEstimatedBudget">Id Alternatif</label>
+                     <input type="text" id="inputEstimatedBudget" name="id_alter" value="<?= $id_alter; ?>" class=" form-control" readonly>
                    </div>
                    <div class="form-group">
-                     <label for="inputSpentBudget">Nama alternatif</label>
-                     <input type="text" id="inputSpentBudget" name="nm_alternatif" value="<?= $nm_alter; ?>" class="form-control" autofocus>
+                     <label for="inputSpentBudget">Nama Alternatif</label>
+                     <input type="text" id="inputSpentBudget" name="nm_alter" value="<?= $nm_alter; ?>" class="form-control" autofocus>
                    </div>
                    <div class="form-group float-right">
                      <a href="<?= $domain . "?page=form-alternatif"; ?>" class="btn btn-secondary">Cancel</a>
@@ -124,12 +124,12 @@
                    <input type="text" id="inputEstimatedBudget" name="id_alternatif" class="form-control" autofocus>
                  </div> -->
                  <div class="form-group">
-                   <label for="inputSpentBudget">Nama alternatif</label>
+                   <label for="inputSpentBudget">Nama Alternatif</label>
                    <input type="text" id="inputSpentBudget" name="nm_alter" class="form-control" autofocus="">
                  </div>
                  <div class="form-group float-right">
                    <a href="#" class="btn btn-secondary">Cancel</a>
-                   <input type="submit" value="Simpan" class="btn btn-primary">
+                   <input type="submit" value="Save" class="btn btn-primary">
                  </div>
                </form>
              <?php

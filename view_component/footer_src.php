@@ -1,9 +1,5 @@
 <footer class="main-footer">
-  <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-  All rights reserved.
-  <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 3.1.0-pre
-  </div>
+  <strong>Copyright &copy; BATIK HATTA - 2020 </strong>
 </footer>
 
 <!-- Control Sidebar -->
@@ -110,13 +106,12 @@
   function confirm_logout() {
     Swal.fire({
       title: 'Yakin untuk logout?',
-      text: "Anda akan logout jika tekan tombol Ya.",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya. Logout',
-      cancelButtonText: 'Tidak jadi.'
+      confirmButtonText: 'YES',
+      cancelButtonText: 'NO'
     }).then((result) => {
       if (result.value) {
 

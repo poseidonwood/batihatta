@@ -245,7 +245,7 @@ if (isset($_GET['id_bobot'])) {
     let timerInterval
     Swal.fire({
       title: 'Menghitung Ranking',
-      html: 'Tunggu sebentar <b></b>.',
+      html: 'PLEASE WAIT <b></b>.',
       timer: 2000,
       timerProgressBar: true,
       onBeforeOpen: () => {

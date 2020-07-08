@@ -120,7 +120,7 @@ if (isset($_GET['m'])) {
     
     Toast.fire({
       icon: 'success',
-      title: 'Data Base Berhasil Di Hapus'
+      title: 'Data Berhasil Di Hapus'
     })
   </script>";
   } elseif ($_GET['m'] == 'ganti-sukses') {

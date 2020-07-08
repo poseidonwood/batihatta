@@ -21,6 +21,11 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <div class="jumbotron">
+    <h2>SPK HYBRID AHP-TOPSIS Penentuan Pendirian Lokasi Stand</h2>
+    <p>Sistem Pendukung Keputusan Metode HYBRID ini menggunakan metode komparasi antara AHP dan TOPSIS.
+      <br>AHP digunakan untuk mencari nilai bobot dari setiap kriteria, TOPSIS digunakan untuk mencari ranking dari alternatif. </p></br>
+  </div>
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-6">
@@ -40,7 +45,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-success">
+          <div class="small-box bg-secondary">
             <div class="inner">
               <h3><?= ranking_kriteria(); ?></h3>
 
@@ -53,19 +58,16 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-md-6">
           <!-- small box -->
-          <div class="small-box bg-warning">
+          <div class="small-box bg-dark">
             <div class="inner">
               <h3><?= user(); ?></h3>
 
-              <p>User Terdaftar</p>
+              <p>User</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
         </div>
         <!-- ./col -->
 

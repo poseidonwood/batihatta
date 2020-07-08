@@ -127,7 +127,7 @@ $b5 = mysqli_fetch_array($query5);
                         <table class="table table-bordered table-striped table-sm">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Alternatifgit </th>
+                                    <th>KRITERIA </th>
                                     <th><?php echo $b1['kriteria1']; ?></th>
                                     <th><?php echo $b2['kriteria1']; ?></th>
                                     <th><?php echo $b3['kriteria1']; ?></th>
@@ -163,15 +163,15 @@ $b5 = mysqli_fetch_array($query5);
                                     <td align="center">
                                         <select onchange="excel_f4()" class="custom-select mr-sm-2" id="f4" name="nm_banding1">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
@@ -194,29 +194,29 @@ $b5 = mysqli_fetch_array($query5);
                                     <td align="center">
                                         <select onchange="excel_f5()" class="custom-select mr-sm-2" id="f5" class="form-control" name="nm_banding2">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_g5()" class="custom-select mr-sm-2" id="g5" class="form-control" name="nm_banding3">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
@@ -235,43 +235,43 @@ $b5 = mysqli_fetch_array($query5);
                                     <td align="center">
                                         <select onchange="excel_f6()" class="custom-select mr-sm-2" id="f6" class="form-control" name="nm_banding4">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_g6()" class="custom-select mr-sm-2" id="g6" class="form-control" name="nm_banding5">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_h6()" class="custom-select mr-sm-2" id="h6" class="form-control" name="nm_banding6">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
@@ -287,57 +287,57 @@ $b5 = mysqli_fetch_array($query5);
                                     <td align="center">
                                         <select onchange="excel_f7()" class="custom-select mr-sm-2" id="f7" class="form-control" name="nm_banding7">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_g7()" class="custom-select mr-sm-2" id="g7" class="form-control" name="nm_banding8">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_h7()" class="custom-select mr-sm-2" id="h7" class="form-control" name="nm_banding9">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td align="center">
                                         <select onchange="excel_i7()" class="custom-select mr-sm-2" id="i7" class="form-control" name="nm_banding10">
                                             <option value="0">Input Value</option>
-                                            <option value="1">1. Sama penting dengan</option>
-                                            <option value="2">2. Mendekati sedikit lebih penting dari</option>
-                                            <option value="3">3. Sedikit lebih penting dari</option>
-                                            <option value="4">4. Mendekati lebih penting dari</option>
-                                            <option value="5">5. Lebih penting dari</option>
-                                            <option value="6">6. Mendekati sangat penting dari</option>
-                                            <option value="7">7. Sangat penting dari</option>
-                                            <option value="8">8. Mendekati mutlak dari</option>
-                                            <option value="9">9. Mutlak sangat penting dari</option>
+                                            <option value="1">1. EQUAL</option>
+                                            <option value="2">2. INTERMEDIATE</option>
+                                            <option value="3">3. MODERATE</option>
+                                            <option value="4">4. INTERMEDIATE</option>
+                                            <option value="5">5. STRONG</option>
+                                            <option value="6">6. INTERMEDIATE</option>
+                                            <option value="7">7. VERY STRONG</option>
+                                            <option value="8">8. INTERMEDIATE</option>
+                                            <option value="9">9. ABSOLUTE</option>
                                         </select>
                                     </td>
                                     <td colspan="3" align="center">

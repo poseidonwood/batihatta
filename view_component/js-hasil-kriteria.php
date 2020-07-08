@@ -83,12 +83,12 @@
   function tampil_total() {
     Swal.fire({
       title: 'Apakah data sudah diisi semua ?',
-      text: "Jika sudah di isi tekan tombol Yes.",
+      text: "Jika sudah, tekan tombol YES.",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya, Cek Total'
+      confirmButtonText: 'YES'
     }).then((result) => {
       if (result.value) {
 
@@ -216,6 +216,7 @@
           var b_m_h7 = document.getElementById("m_h7").innerHTML;
           var b_m_i7 = document.getElementById("m_i7").innerHTML;
           var b_m_j7 = document.getElementById("m_j7").innerHTML;
+          // proses p vector
           var bobot5 = (parseFloat(b_m_f7) + parseFloat(b_m_g7) + parseFloat(b_m_h7) + parseFloat(b_m_i7) + parseFloat(b_m_j7)) / 5;
           //akhir cari bobot
 
@@ -258,7 +259,7 @@
   function hitung_alternatif() {
     Swal.fire({
       title: 'Apakah data sudah diisi semua ?',
-      text: "Jika sudah di isi tekan tombol Yes.",
+      text: "Jika sudah, tekan tombol Yes.",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

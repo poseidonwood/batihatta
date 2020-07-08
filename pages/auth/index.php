@@ -61,7 +61,7 @@ include "../../config/sql.php";
       
       Toast.fire({
         icon: 'error',
-        title: 'Akses di tolak !! . Anda harus login dahulu..'
+        title: 'Akses di tolak ! Anda harus login dahulu.'
       })
     </script>";
     }
@@ -71,7 +71,7 @@ include "../../config/sql.php";
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="<?= domain(); ?>"><b>Login : </b> Page</a>
+      <a href="<?= domain(); ?>"><b>Login </b>
     </div>
     <!-- /.login-logo -->
     <div class="card">

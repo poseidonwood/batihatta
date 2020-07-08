@@ -28,9 +28,9 @@
    <section class="content">
      <div class="row">
        <div class="col-md-12">
-         <div class="card card-success">
+         <div class="card card-dark">
            <div class="card-header">
-             <a href="#" class="btn btn-primary" onclick="hitung_ulang()">
+             <a href="#" class="btn btn-info" onclick="hitung_ulang()">
                <h3 class="card-title"><i class="fas fa-angle-left"></i> Hitung Kembali</h3>
              </a>
 
@@ -86,7 +86,7 @@
                  <?php
                     }
                   } else {
-                    echo "<center><span class='badge bg-warning'><marquee><h3> Data Masih Kosong , Silahkan Klik Mulai Hitung </h3></marquee></span></center>";
+                    echo "<center><span class='badge bg-danger'><marquee><h3> Data Masih Kosong , Silahkan Klik Mulai Hitung </h3></marquee></span></center>";
                   }
                   ?>
                  </tbody>
@@ -166,8 +166,8 @@
    function alihkan() {
      let timerInterval
      Swal.fire({
-       title: 'Generate Id Hitung',
-       html: 'Generate akan selasai dalam <b></b> milliseconds.',
+       title: 'LOADING',
+       html: 'Loading akan selasai dalam <b></b>.',
        timer: 5000,
        timerProgressBar: true,
        onBeforeOpen: () => {

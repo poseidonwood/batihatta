@@ -34,7 +34,7 @@
              <table class="table table-bordered">
                <thead>
                  <tr>
-                   <th class="text-center align-middle">#</th>
+                   <th class="text-center align-middle">No</th>
                    <th class="text-center align-middle">Nama Kriteria</th>
                    <th class="text-center align-middle">Aksi</th>
                  </tr>
@@ -129,7 +129,7 @@
                  </div>
                  <div class="form-group float-right">
                    <a href="#" class="btn btn-secondary">Cancel</a>
-                   <input type="submit" value="Simpan" class="btn btn-primary">
+                   <input type="submit" value="Save" class="btn btn-primary">
                  </div>
                </form>
              <?php
