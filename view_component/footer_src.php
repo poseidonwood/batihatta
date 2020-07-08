@@ -44,11 +44,50 @@
   </div>
 </div>
 <!-- akhir modals ganti password -->
+
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- Block ctrl + u -->
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault(
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      confirmButtonText: 'Keluar',
+      text: 'Tidak menjalankan fungsi tersebut..'
+      // footer: 'Coba Lagi!!'
+    })
+  ));
+  document.onkeydown = function(e) {
+    if (e.ctrlKey &&
+      (e.keyCode === 67 ||
+        e.keyCode === 86 ||
+        e.keyCode === 85 ||
+        e.keyCode === 117)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        confirmButtonText: 'Keluar',
+        text: 'Tidak menjalankan fungsi tersebut..'
+        // footer: 'Coba Lagi!!'
+      })
+      // window.alert('Maaf tidak bisa lihat source code');
+      return false;
+    } else {
+      return true;
+    }
+  };
+  $(document).keypress("u", function(e) {
+    if (e.ctrlKey) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+</script>
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
