@@ -1,4 +1,5 @@
 <?php
+//test command
 $id_bobot = round($_GET['id_bobot'], 3);
 $matrixf3 = round($_GET['matrixf3'], 3);
 $matrixf4 = round($_GET['matrixf4'], 3);
