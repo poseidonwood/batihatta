@@ -12,6 +12,22 @@ $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
 $b4 = mysqli_fetch_array($query4);
 $b5 = mysqli_fetch_array($query5);
+// deklarasi utk menampilkan nama alternatif
+$query6 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='1'");
+$query7 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='2'");
+$query8 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='3'");
+$query9 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='4'");
+$query10 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='5'");
+$a1 = mysqli_fetch_array($query6);
+$a2 = mysqli_fetch_array($query7);
+$a3 = mysqli_fetch_array($query8);
+$a4 = mysqli_fetch_array($query9);
+$a5 = mysqli_fetch_array($query10);
+$aa1 = $a1['nm_alter'];
+$aa2 = $a2['nm_alter'];
+$aa3 = $a3['nm_alter'];
+$aa4 = $a4['nm_alter'];
+$aa5 = $a5['nm_alter'];
 if (isset($_GET['id_bobot'])) {
 
   $id_bobot = $_GET['id_bobot'];
@@ -99,7 +115,7 @@ if (isset($_GET['id_bobot'])) {
           </thead>
           <tbody>
             <tr>
-              <th><?php echo $b1['kriteria1']; ?></th> <!-- Baris Umur -->
+              <th><?php echo $aa1; ?></th> <!-- Baris Umur -->
               <td align="center">
                 <input type="number" value="<?= $matrixf3; ?>" class="form-control" readonly name="f3">
               </td>
@@ -118,7 +134,7 @@ if (isset($_GET['id_bobot'])) {
             </tr>
 
             <tr>
-              <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
+              <th><?php echo $aa2; ?></th> <!-- Baris IPK -->
               <td align="center">
                 <input type="number" value="<?= $matrixf4; ?>" class="form-control" readonly name="f4">
               </td>
@@ -138,7 +154,7 @@ if (isset($_GET['id_bobot'])) {
             </tr>
 
             <tr>
-              <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
+              <th><?php echo $aa3; ?></th> <!-- baris Penghasilan Orangtua -->
               <td align="center">
                 <input type="number" value="<?= $matrixf5; ?>" class="form-control" readonly name="f5">
               </td>
@@ -157,7 +173,7 @@ if (isset($_GET['id_bobot'])) {
             </tr>
 
             <tr>
-              <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
+              <th><?php echo $aa4; ?></th> <!-- baris semester -->
               <td align="center">
                 <input type="number" value="<?= $matrixf6; ?>" class="form-control" readonly name="f6">
               </td>
@@ -176,7 +192,7 @@ if (isset($_GET['id_bobot'])) {
             </tr>
 
             <tr>
-              <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
+              <th><?php echo $aa5; ?></th> <!-- baris semester -->
               <td align="center">
                 <input type="number" value="<?= $matrixf7; ?>" class="form-control" readonly name="f7">
               </td>
