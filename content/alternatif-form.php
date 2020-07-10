@@ -42,7 +42,7 @@
                <tbody>
                  <?php
                   $no = 1;
-                  $sql_alter = mysqli_query($koneksi, "select *from tbl_alter");
+                  $sql_alter = mysqli_query($koneksi, "select *from tbl_alter where is_null = 'N'");
                   while ($f_alter = mysqli_fetch_array($sql_alter)) {
                     // $no1 = $no++;
                     $id_alter = $f_alter['id_alter'];

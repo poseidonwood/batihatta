@@ -1,26 +1,26 @@
 <?php
 //query tbl perbandingan 
-$query1 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B01'");
-$query2 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B02'");
-$query3 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B03'");
-$query4 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B04'");
-$query5 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B05'");
+$query1 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria where id_kriteria='1'");
+$query2 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria where id_kriteria='2'");
+$query3 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria where id_kriteria='3'");
+$query4 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria where id_kriteria='4'");
+$query5 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria where id_kriteria='5'");
 $b1 = mysqli_fetch_array($query1);
 $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
 $b4 = mysqli_fetch_array($query4);
 $b5 = mysqli_fetch_array($query5);
-$bb1 = $b1['kriteria1'];
-$bb2 = $b2['kriteria1'];
-$bb3 = $b3['kriteria1'];
-$bb4 = $b4['kriteria1'];
-$bb5 = $b5['kriteria1'];
+$bb1 = $b1['nama_kriteria'];
+$bb2 = $b2['nama_kriteria'];
+$bb3 = $b3['nama_kriteria'];
+$bb4 = $b4['nama_kriteria'];
+$bb5 = $b5['nama_kriteria'];
 // deklarasi utk menampilkan nama alternatif
-$query6 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='47238'");
-$query7 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='63789'");
-$query8 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='253816'");
-$query9 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='307249'");
-$query10 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='452136'");
+$query6 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='1'");
+$query7 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='2'");
+$query8 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='3'");
+$query9 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='4'");
+$query10 = mysqli_query($koneksi, "SELECT * FROM tbl_alter where id_alter='5'");
 $a1 = mysqli_fetch_array($query6);
 $a2 = mysqli_fetch_array($query7);
 $a3 = mysqli_fetch_array($query8);

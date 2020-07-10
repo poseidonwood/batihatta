@@ -1,11 +1,11 @@
 <?php
 
 //query tbl perbandingan
-$query1 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B01'");
-$query2 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B02'");
-$query3 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B03'");
-$query4 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B04'");
-$query5 = mysqli_query($koneksi, "SELECT * FROM tb_perb_kriteria where id_kriteria='B05'");
+$query1 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria  where id_kriteria='1'");
+$query2 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria  where id_kriteria='2'");
+$query3 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria  where id_kriteria='3'");
+$query4 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria  where id_kriteria='4'");
+$query5 = mysqli_query($koneksi, "SELECT * FROM tbl_kriteria  where id_kriteria='5'");
 $b1 = mysqli_fetch_array($query1);
 $b2 = mysqli_fetch_array($query2);
 $b3 = mysqli_fetch_array($query3);
@@ -128,17 +128,17 @@ $b5 = mysqli_fetch_array($query5);
                             <thead class="thead-light">
                                 <tr>
                                     <th>KRITERIA </th>
-                                    <th><?php echo $b1['kriteria1']; ?></th>
-                                    <th><?php echo $b2['kriteria1']; ?></th>
-                                    <th><?php echo $b3['kriteria1']; ?></th>
-                                    <th><?php echo $b4['kriteria1']; ?></th>
+                                    <th><?php echo $b1['nama_kriteria']; ?></th>
+                                    <th><?php echo $b2['nama_kriteria']; ?></th>
+                                    <th><?php echo $b3['nama_kriteria']; ?></th>
+                                    <th><?php echo $b4['nama_kriteria']; ?></th>
 
-                                    <th><?php echo $b5['kriteria1']; ?></th>
+                                    <th><?php echo $b5['nama_kriteria']; ?></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th><?php echo $b1['kriteria1']; ?></th> <!-- Baris Umur -->
+                                    <th><?php echo $b1['nama_kriteria']; ?></th> <!-- Baris Umur -->
                                     <td align="center" id="f3"><?php echo $b1['nilai_banding']; ?></td>
                                     <td align="center">
                                         <font color="red">
@@ -159,7 +159,7 @@ $b5 = mysqli_fetch_array($query5);
                                 </tr>
 
                                 <tr>
-                                    <th><?php echo $b2['kriteria1']; ?></th> <!-- Baris IPK -->
+                                    <th><?php echo $b2['nama_kriteria']; ?></th> <!-- Baris IPK -->
                                     <td align="center">
                                         <select onchange="excel_f4()" class="custom-select mr-sm-2" id="f4" name="nm_banding1">
                                             <option value="0">Input Value</option>
@@ -190,7 +190,7 @@ $b5 = mysqli_fetch_array($query5);
                                 </tr>
 
                                 <tr>
-                                    <th><?php echo $b3['kriteria1']; ?></th> <!-- baris Penghasilan Orangtua -->
+                                    <th><?php echo $b3['nama_kriteria']; ?></th> <!-- baris Penghasilan Orangtua -->
                                     <td align="center">
                                         <select onchange="excel_f5()" class="custom-select mr-sm-2" id="f5" class="form-control" name="nm_banding2">
                                             <option value="0">Input Value</option>
@@ -231,7 +231,7 @@ $b5 = mysqli_fetch_array($query5);
                                 </tr>
 
                                 <tr>
-                                    <th><?php echo $b4['kriteria1']; ?></th> <!-- baris semester -->
+                                    <th><?php echo $b4['nama_kriteria']; ?></th> <!-- baris semester -->
                                     <td align="center">
                                         <select onchange="excel_f6()" class="custom-select mr-sm-2" id="f6" class="form-control" name="nm_banding4">
                                             <option value="0">Input Value</option>
@@ -283,7 +283,7 @@ $b5 = mysqli_fetch_array($query5);
                                 </tr>
 
                                 <tr>
-                                    <th><?php echo $b5['kriteria1']; ?></th> <!-- baris semester -->
+                                    <th><?php echo $b5['nama_kriteria']; ?></th> <!-- baris semester -->
                                     <td align="center">
                                         <select onchange="excel_f7()" class="custom-select mr-sm-2" id="f7" class="form-control" name="nm_banding7">
                                             <option value="0">Input Value</option>

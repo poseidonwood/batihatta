@@ -1,4 +1,5 @@
 <?php
+include "../../config/database.php";
 include "../../config/sql.php";
 ?>
 <!DOCTYPE html>
@@ -71,14 +72,14 @@ include "../../config/sql.php";
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="<?= domain(); ?>"><b>Login </b>
+      <a href="<?= domain(); ?>"><b>Login </b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg"><?= judul(); ?></p>
 
-        <form action="check/" method="post">
+        <form action="<?=$domain."pages/auth/check/";?>" method="post">
           <div class="input-group mb-3">
             <input type="email" class="form-control" name="email" placeholder="Email" autofocus required>
             <div class="input-group-append">

@@ -42,7 +42,7 @@
                <tbody>
                  <?php
                   $no = 1;
-                  $sql_kriteria = mysqli_query($koneksi, "select *from tbl_kriteria");
+                  $sql_kriteria = mysqli_query($koneksi, "select *from tbl_kriteria where is_null = 'N'");
                   while ($f_kriteria = mysqli_fetch_array($sql_kriteria)) {
                     // $no1 = $no++;
                     $id_kriteria = $f_kriteria['id_kriteria'];

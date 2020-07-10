@@ -41,6 +41,26 @@ if (isset($_GET['m'])) {
       title: 'Data Gagal Di Ubah'
     })
   </script>";
+  } elseif ($_GET['m'] == 'fail-limit') {
+
+    echo "<script>
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      onOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'error',
+      title: 'Anda tidak bisa simpan data lagi , karena maks 5 Inputan saja'
+    })
+  </script>";
   } elseif ($_GET['m'] == 'save') {
 
     echo "<script>
