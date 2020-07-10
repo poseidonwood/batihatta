@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 08, 2020 at 09:24 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Host: localhost
+-- Generation Time: Jul 10, 2020 at 06:50 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,19 +49,20 @@ INSERT INTO `domain` (`id`, `nm_domain`, `title`, `status`) VALUES
 
 CREATE TABLE `tbl_alter` (
   `id_alter` int(10) NOT NULL,
-  `nm_alter` varchar(255) NOT NULL
+  `nm_alter` varchar(255) NOT NULL,
+  `is_null` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_alter`
 --
 
-INSERT INTO `tbl_alter` (`id_alter`, `nm_alter`) VALUES
-(47238, 'PARAGON'),
-(63789, 'JAVA MALL'),
-(253816, 'DP MALL'),
-(307249, 'TRANSMART'),
-(452136, 'CITRALAND');
+INSERT INTO `tbl_alter` (`id_alter`, `nm_alter`, `is_null`) VALUES
+(1, 'TRANSMART', 'N'),
+(2, 'JAVA MALL', 'N'),
+(3, 'DP MALL', 'N'),
+(4, 'HAHAHA', 'N'),
+(5, 'MALANG PLASA', 'N');
 
 -- --------------------------------------------------------
 
@@ -129,11 +130,10 @@ CREATE TABLE `tbl_bobot` (
 --
 
 INSERT INTO `tbl_bobot` (`id_bobot`, `id_total`, `bobot`, `bobot2`, `bobot3`, `bobot4`, `bobot5`, `created_time`, `status_bobot`, `status_hitung`) VALUES
-('156730', '3cFbUo', 0.2, 0.2, 0.2, 0.2, 0.2, '2020-07-08 12:17:19', 'SELESAI - RANKING KELUAR', 'INPUT BOBOT'),
 ('216547', 'nrYowl', 0.2, 0.2, 0.2, 0.2, 0.2, '2020-07-07 19:56:54', 'SELESAI - RANKING KELUAR', 'INPUT BOBOT'),
 ('317640', 'LnrfvY', 0.2, 0.2, 0.2, 0.2, 0.2, '2020-07-08 11:27:10', 'HITUNG ALTERNATIF', 'INPUT BOBOT'),
 ('613458', 'NrDEVe', 0.2, 0.2, 0.2, 0.2, 0.2, '2020-07-08 13:29:55', 'HITUNG ALTERNATIF', 'INPUT BOBOT'),
-('719083', '8QLOCm', 0.2, 0.2, 0.2, 0.2, 0.2, '2020-07-08 13:04:27', 'HITUNG ALTERNATIF', 'INPUT BOBOT');
+('703185', NULL, NULL, NULL, NULL, NULL, NULL, '2020-07-10 23:45:14', 'PROSES HITUNG', 'INPUT BOBOT');
 
 -- --------------------------------------------------------
 
@@ -143,19 +143,21 @@ INSERT INTO `tbl_bobot` (`id_bobot`, `id_total`, `bobot`, `bobot2`, `bobot3`, `b
 
 CREATE TABLE `tbl_kriteria` (
   `id_kriteria` int(20) NOT NULL,
-  `nama_kriteria` varchar(255) NOT NULL
+  `nama_kriteria` varchar(255) NOT NULL,
+  `nilai_banding` int(11) NOT NULL,
+  `is_null` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_kriteria`
 --
 
-INSERT INTO `tbl_kriteria` (`id_kriteria`, `nama_kriteria`) VALUES
-(4, 'LOKASI'),
-(5, 'LABA'),
-(6, 'KEAMANAN'),
-(7, 'BIAYA SEWA'),
-(9, 'TATA LETAK');
+INSERT INTO `tbl_kriteria` (`id_kriteria`, `nama_kriteria`, `nilai_banding`, `is_null`) VALUES
+(1, 'LOKASI', 1, 'N'),
+(2, 'LABA', 1, 'N'),
+(3, 'KEAMANAN', 1, 'N'),
+(4, 'BIAYA SEWA', 1, 'N'),
+(5, 'TITI LITIK', 1, 'N');
 
 -- --------------------------------------------------------
 
